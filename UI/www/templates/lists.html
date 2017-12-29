@@ -1,0 +1,128 @@
+﻿<style>
+    span#autocomplete_wrapper {
+        width: 100% !important;
+        height: 35px;
+    }
+
+    .col-lg-9.autocomplete_wrapper {
+        width: 100%;
+    }
+
+    .e-atc .e-select {
+        background-color: #f8f8f8;
+        border-color: #b2b2b2;
+        background-color: #f8f8f8;
+        color: #444;
+    }
+
+    button.button.button-raised.button-stable.ink-dark.ion-refresh {
+        margin-left: 15px;
+        margin-right: 5px;
+        height: 35px;
+        padding-left: 10px;
+        padding-right: 10px;
+        min-width: 15% !important;
+        min-height: 33px !important;
+        line-height: 38px;
+    }
+
+    .e-atc .e-select:hover, .e-atc.e-rtl .e-select:hover {
+        background: #E0E0E0;
+    }
+
+    img.img-fluid {
+        cursor: pointer;
+    }
+
+    .e-rating.e-widget.e-horizontal.e-tooltip.e-js {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    div#dialog_title {
+        background-color: #ef473a;
+        border-color: #ef473a;
+    }
+
+    div#dialog_closebutton:before {
+        color: #ffffff;
+    }
+
+    div#dialog_closebutton:hover {
+        background: none;
+    }
+
+    span.e-title {
+        color: #fff;
+    }
+
+    h4.tagsTitle {
+        margin-top: 4px;
+        margin-bottom: 4px;
+        text-align: center;
+    }
+
+    p.tagsValue {
+        text-align: center;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        text-align: center;
+    }
+
+    button.button.ion-heart {
+        color: #82c3d6;
+        background-color: unset;
+        padding: 0px;
+        min-width: 35px;
+        min-height: 31px;
+        line-height: 15px;
+        font-size: 20px;
+        margin-left: 10px;
+        margin-top: 7px;
+        box-shadow: unset !important;
+        display: inherit;
+        text-transform: none;
+        border-color: black;
+    }
+</style>
+
+
+<ion-view view-title="Tag Gallery">
+    <ion-content class="has-header">
+
+        <!--Auto Complete-->
+        <div class="im-wrapper">
+            <div class="row">
+                <div class="col-lg-9 autocomplete_wrapper">
+                    <input type="text" id="autocomplete" style="width:100%" />
+                </div>
+                <div class="col-lg-3">
+                    <button class="button button-raised button-stable ink-dark ion-refresh" ng-click="clearSearch()"></button>
+                </div>
+            </div>
+
+
+            <!--Image and rating Card-->
+            <div class="card" ng-repeat="galleryValues in gallery">
+                <!--Card image-->
+                <img class="img-fluid" src={{galleryValues.url}} width="100%" ng-click="showPopup(galleryValues.Id)">
+                <h4 class="tagsTitle">Tags</h4>
+                <p class="tagsValue">
+                    <ion-card ng-repeat="tagsValue in galleryValues.description.tags">
+                        <ion-card-content>
+                            #{{tagsValue}},
+                        </ion-card-content>
+                    </ion-card>
+                </p>
+            </div>
+
+            <div id="dialog">
+                <h1 style="font-weight:bold;text-align:center;color:#b110e9;font-size:20px">Rate your Image</h1>
+                <input id="RatingImage" type="text" class="rating" />
+                <button class="button ion-heart" id="favourite" style="display:inline-block"><p style="font-size:14px;margin-left:4px;display:inline-block">Favourite</p></button>
+            </div>
+        </div>
+
+    </ion-content>
+
+</ion-view>

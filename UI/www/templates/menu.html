@@ -1,0 +1,70 @@
+﻿<style>
+    .menu .bar.bar-header.expanded {
+        background-image: none;
+        background-color: #232935;
+        text-align: center;
+    }
+
+    .menu-bottom {
+        color: black;
+    }
+
+    img.avatar.motion.spin.fade {
+        position: absolute;
+        left: 0px;
+        margin-left: 21%;
+        margin-top: 30px;
+        width: 55%;
+        height: 80%;
+    }
+
+    a.item-content:active, a.item-content:hover,a.item-content:focus {
+        background-color: #f76c54;
+        color: #fff;
+    }
+
+    .has-expanded-header {
+        top: 160px !important;
+    }
+</style>
+
+
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-assertive">
+            <ion-nav-back-button class="no-text">
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+            <!--<ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+            </ion-nav-buttons>-->
+        </ion-nav-bar>
+        <!--<button id="fab" class="button button-positive button-fab button-fab-bottom-right">
+            <i class="icon ion-social-twitter"></i>
+        </button>-->
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-header-bar class="expanded">
+            <img src="img/TweakerLogo.png" class="avatar motion spin fade">
+        </ion-header-bar>
+        <ion-content class="has-expanded-header">
+            <ion-list>
+                <ion-item nav-clear menu-close href="#/app/components" ui-sref-active="active">
+                    Memory Storage
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/app/extensions" ui-sref-active="active">
+                    Image Upload
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/app/lists" ui-sref-active="active">
+                    Gallery
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/app/motion" ui-sref-active="active">
+                    Statistics
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

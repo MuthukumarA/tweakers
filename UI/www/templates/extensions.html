@@ -1,0 +1,38 @@
+
+<ion-view view-title="Image Upload">
+  <ion-content class="has-header">
+    <!--<div class="bar bar-subheader bar-stable static text-center">
+      <strong class="title">All Ionic, Materialized</strong>
+    </div>-->
+    <div class="im-wrapper">
+      <div class="row">
+        <div class="col-sm-12">
+          <strong class="title">Select file to upload</strong>
+          <div id="targetElement">
+            <div id="UploadItem"></div>
+          </div>
+        </div>
+      </div>
+      <!--<div class="row">
+      <div class="col-sm-12" id="sampleBtn">
+        <img src="/img/camera.png" style="height: 100px; width: 100px;    border: 1px dashed darkgrey; cursor: pointer;"/>
+      </div>
+    </div>-->
+    </div>
+    <script src="https://cdn.rawgit.com/jpillora/xdomain/0.7.4/dist/xdomain.min.js"></script>
+    <script>
+      $("#sampleBtn").on("click", function () {
+        debugger;
+        $("input[type='file'][name='<%=UploadItem.ClientID%>']").trigger("click");
+      });
+      xdomain.slaves({
+        "http://localhost:1814": "/proxy.html"
+           
+      });
+    </script>
+  </ion-content>
+</ion-view>
+
+<script> 
+ 
+</script>
